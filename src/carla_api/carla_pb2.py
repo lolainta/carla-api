@@ -24,17 +24,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x61rla.proto\"\x07\n\x05\x45mpty\"\x13\n\x04Pong\x12\x0b\n\x03msg\x18\x01 \x01(\t2!\n\x08\x43\x61rlaSim\x12\x15\n\x04Ping\x12\x06.Empty\x1a\x05.Pongb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x61rla.proto\x12\tcarla_api\"\x07\n\x05\x45mpty\"\x13\n\x04Pong\x12\x0b\n\x03msg\x18\x01 \x01(\t25\n\x08\x43\x61rlaSim\x12)\n\x04Ping\x12\x10.carla_api.Empty\x1a\x0f.carla_api.Pongb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'carla_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_EMPTY']._serialized_start=15
-  _globals['_EMPTY']._serialized_end=22
-  _globals['_PONG']._serialized_start=24
-  _globals['_PONG']._serialized_end=43
-  _globals['_CARLASIM']._serialized_start=45
-  _globals['_CARLASIM']._serialized_end=78
+  _globals['_EMPTY']._serialized_start=26
+  _globals['_EMPTY']._serialized_end=33
+  _globals['_PONG']._serialized_start=35
+  _globals['_PONG']._serialized_end=54
+  _globals['_CARLASIM']._serialized_start=56
+  _globals['_CARLASIM']._serialized_end=109
 # @@protoc_insertion_point(module_scope)

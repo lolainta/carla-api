@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package carla_api;
+
 service CarlaSim {
   rpc Ping(Empty) returns (Pong);
 }

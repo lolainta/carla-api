@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import carla_pb2 as carla__pb2
+from . import carla_pb2 as carla__pb2
 
 GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
@@ -35,7 +35,7 @@ class CarlaSimStub(object):
             channel: A grpc.Channel.
         """
         self.Ping = channel.unary_unary(
-                '/CarlaSim/Ping',
+                '/carla_api.CarlaSim/Ping',
                 request_serializer=carla__pb2.Empty.SerializeToString,
                 response_deserializer=carla__pb2.Pong.FromString,
                 _registered_method=True)
@@ -60,9 +60,9 @@ def add_CarlaSimServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'CarlaSim', rpc_method_handlers)
+            'carla_api.CarlaSim', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('CarlaSim', rpc_method_handlers)
+    server.add_registered_method_handlers('carla_api.CarlaSim', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,7 +83,7 @@ class CarlaSim(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/CarlaSim/Ping',
+            '/carla_api.CarlaSim/Ping',
             carla__pb2.Empty.SerializeToString,
             carla__pb2.Pong.FromString,
             options,
