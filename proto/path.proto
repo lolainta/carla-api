@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package carla_api;
+
+message Path{
+  string path = 1;
+}

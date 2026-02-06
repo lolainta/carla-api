@@ -22,19 +22,39 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from . import control_pb2 as control__pb2
+from . import object_pb2 as object__pb2
+from . import scenario_pb2 as scenario__pb2
+from . import path_pb2 as path__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x61rla.proto\x12\tcarla_api\"\x07\n\x05\x45mpty\"\x13\n\x04Pong\x12\x0b\n\x03msg\x18\x01 \x01(\t25\n\x08\x43\x61rlaSim\x12)\n\x04Ping\x12\x10.carla_api.Empty\x1a\x0f.carla_api.Pongb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x61rla.proto\x12\tcarla_api\x1a\rcontrol.proto\x1a\x0cobject.proto\x1a\x0escenario.proto\x1a\npath.proto\"\x07\n\x05\x45mpty\"\x13\n\x04Pong\x12\x0b\n\x03msg\x18\x01 \x01(\t\".\n\x0bInitRequest\x12\x1f\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x0f.carla_api.Path\",\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\"I\n\x0bStepRequest\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.carla_api.CtrlCmd\x12\x14\n\x0ctimestamp_ns\x18\x02 \x01(\x03\"6\n\x0cStepResponse\x12&\n\x07objects\x18\x01 \x03(\x0b\x32\x15.carla_api.ObjectStat\"\xb6\x01\n\x0cResetRequest\x12\x12\n\noutput_dir\x18\x01 \x01(\t\x12.\n\rscenario_pack\x18\x02 \x01(\x0b\x32\x17.carla_api.ScenarioPack\x12\x33\n\x06params\x18\x03 \x03(\x0b\x32#.carla_api.ResetRequest.ParamsEntry\x1a-\n\x0bParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\rResetResponse\x12&\n\x07objects\x18\x01 \x03(\x0b\x32\x15.carla_api.ObjectStat2\x8f\x02\n\x08\x43\x61rlaSim\x12)\n\x04Ping\x12\x10.carla_api.Empty\x1a\x0f.carla_api.Pong\x12\x37\n\x04Init\x12\x16.carla_api.InitRequest\x1a\x17.carla_api.InitResponse\x12\x37\n\x04Step\x12\x16.carla_api.StepRequest\x1a\x17.carla_api.StepResponse\x12*\n\x04Stop\x12\x10.carla_api.Empty\x1a\x10.carla_api.Empty\x12:\n\x05Reset\x12\x17.carla_api.ResetRequest\x1a\x18.carla_api.ResetResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'carla_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_EMPTY']._serialized_start=26
-  _globals['_EMPTY']._serialized_end=33
-  _globals['_PONG']._serialized_start=35
-  _globals['_PONG']._serialized_end=54
-  _globals['_CARLASIM']._serialized_start=56
-  _globals['_CARLASIM']._serialized_end=109
+  _globals['_RESETREQUEST_PARAMSENTRY']._loaded_options = None
+  _globals['_RESETREQUEST_PARAMSENTRY']._serialized_options = b'8\001'
+  _globals['_EMPTY']._serialized_start=83
+  _globals['_EMPTY']._serialized_end=90
+  _globals['_PONG']._serialized_start=92
+  _globals['_PONG']._serialized_end=111
+  _globals['_INITREQUEST']._serialized_start=113
+  _globals['_INITREQUEST']._serialized_end=159
+  _globals['_INITRESPONSE']._serialized_start=161
+  _globals['_INITRESPONSE']._serialized_end=205
+  _globals['_STEPREQUEST']._serialized_start=207
+  _globals['_STEPREQUEST']._serialized_end=280
+  _globals['_STEPRESPONSE']._serialized_start=282
+  _globals['_STEPRESPONSE']._serialized_end=336
+  _globals['_RESETREQUEST']._serialized_start=339
+  _globals['_RESETREQUEST']._serialized_end=521
+  _globals['_RESETREQUEST_PARAMSENTRY']._serialized_start=476
+  _globals['_RESETREQUEST_PARAMSENTRY']._serialized_end=521
+  _globals['_RESETRESPONSE']._serialized_start=523
+  _globals['_RESETRESPONSE']._serialized_end=578
+  _globals['_CARLASIM']._serialized_start=581
+  _globals['_CARLASIM']._serialized_end=852
 # @@protoc_insertion_point(module_scope)
