@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package carla_api;
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 
 enum CtrlMode {
   NONE           = 0;
@@ -15,5 +15,5 @@ enum CtrlMode {
 
 message CtrlCmd {
   required CtrlMode                mode    = 1;
-  map<string, google.protobuf.Any> payload = 2;
+  map<string, google.protobuf.Struct> payload = 2;
 }
