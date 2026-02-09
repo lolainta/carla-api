@@ -47,7 +47,7 @@ message Shape{
     double y = 2;
     double z = 3;
   }
-  Dimention dimension = 2; // length, width, height for bounding box; radius, height for cylinder; ignored for polygon
+  Dimention dimensions = 2; // length, width, height for bounding box; radius, height for cylinder; ignored for polygon
   message Vertex {
     double x = 1;
     double y = 2;
