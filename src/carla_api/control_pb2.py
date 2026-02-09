@@ -25,19 +25,15 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcontrol.proto\x12\tcarla_api\x1a\x1cgoogle/protobuf/struct.proto\"\xa7\x01\n\x07\x43trlCmd\x12!\n\x04mode\x18\x01 \x02(\x0e\x32\x13.carla_api.CtrlMode\x12\x30\n\x07payload\x18\x02 \x03(\x0b\x32\x1f.carla_api.CtrlCmd.PayloadEntry\x1aG\n\x0cPayloadEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct:\x02\x38\x01*i\n\x08\x43trlMode\x12\x08\n\x04NONE\x10\x00\x12\x0e\n\nTRAJECTORY\x10\x01\x12\x12\n\x0eTHROTTLE_STEER\x10\x02\x12\x12\n\x0eVELOCITY_STEER\x10\x03\x12\r\n\tWAYPOINTS\x10\x04\x12\x0c\n\x08POSITION\x10\x05')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcontrol.proto\x12\tcarla_api\x1a\x1cgoogle/protobuf/struct.proto\"V\n\x07\x43trlCmd\x12!\n\x04mode\x18\x01 \x01(\x0e\x32\x13.carla_api.CtrlMode\x12(\n\x07payload\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct*i\n\x08\x43trlMode\x12\x08\n\x04NONE\x10\x00\x12\x0e\n\nTRAJECTORY\x10\x01\x12\x12\n\x0eTHROTTLE_STEER\x10\x02\x12\x12\n\x0eVELOCITY_STEER\x10\x03\x12\r\n\tWAYPOINTS\x10\x04\x12\x0c\n\x08POSITION\x10\x05\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'control_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_CTRLCMD_PAYLOADENTRY']._loaded_options = None
-  _globals['_CTRLCMD_PAYLOADENTRY']._serialized_options = b'8\001'
-  _globals['_CTRLMODE']._serialized_start=228
-  _globals['_CTRLMODE']._serialized_end=333
-  _globals['_CTRLCMD']._serialized_start=59
-  _globals['_CTRLCMD']._serialized_end=226
-  _globals['_CTRLCMD_PAYLOADENTRY']._serialized_start=155
-  _globals['_CTRLCMD_PAYLOADENTRY']._serialized_end=226
+  _globals['_CTRLMODE']._serialized_start=146
+  _globals['_CTRLMODE']._serialized_end=251
+  _globals['_CTRLCMD']._serialized_start=58
+  _globals['_CTRLCMD']._serialized_end=144
 # @@protoc_insertion_point(module_scope)
