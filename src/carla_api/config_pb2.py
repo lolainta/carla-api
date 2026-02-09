@@ -22,20 +22,16 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x63onfig.proto\x12\tcarla_api\x1a\x19google/protobuf/any.proto\"|\n\x06\x43onfig\x12-\n\x06\x63onfig\x18\x01 \x03(\x0b\x32\x1d.carla_api.Config.ConfigEntry\x1a\x43\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x63onfig.proto\x12\tcarla_api\x1a\x1cgoogle/protobuf/struct.proto\"1\n\x06\x43onfig\x12\'\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Structb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'config_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_CONFIG_CONFIGENTRY']._loaded_options = None
-  _globals['_CONFIG_CONFIGENTRY']._serialized_options = b'8\001'
-  _globals['_CONFIG']._serialized_start=54
-  _globals['_CONFIG']._serialized_end=178
-  _globals['_CONFIG_CONFIGENTRY']._serialized_start=111
-  _globals['_CONFIG_CONFIGENTRY']._serialized_end=178
+  _globals['_CONFIG']._serialized_start=57
+  _globals['_CONFIG']._serialized_end=106
 # @@protoc_insertion_point(module_scope)

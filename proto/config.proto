@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package carla_api;
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 
 message Config{
-  map<string, google.protobuf.Any> config = 1;
+  google.protobuf.Struct config = 1;
 }
