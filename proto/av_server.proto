@@ -2,10 +2,25 @@ syntax = "proto3";
 
 package sbsvf_api;
 
+import "config.proto";
 import "empty.proto";
 import "pong.proto";
 
 service AvServer {
   // Check if the server is alive
   rpc Ping(Empty) returns (Pong);
+
+  // Initialize the AV system with configuration parameters
+  rpc Init(AvServerMessages.InitRequest) returns (AvServerMessages.InitResponse);
+}
+
+message AvServerMessages {
+  message InitRequest {
+    Config config = 1;
+  }
+
+  message InitResponse {
+    bool   success = 1;
+    string msg     = 2;
+  }
 }

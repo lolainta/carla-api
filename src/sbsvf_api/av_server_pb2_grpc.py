@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from . import av_server_pb2 as av__server__pb2
 from . import empty_pb2 as empty__pb2
 from . import pong_pb2 as pong__pb2
 
@@ -40,6 +41,11 @@ class AvServerStub(object):
                 request_serializer=empty__pb2.Empty.SerializeToString,
                 response_deserializer=pong__pb2.Pong.FromString,
                 _registered_method=True)
+        self.Init = channel.unary_unary(
+                '/sbsvf_api.AvServer/Init',
+                request_serializer=av__server__pb2.AvServerMessages.InitRequest.SerializeToString,
+                response_deserializer=av__server__pb2.AvServerMessages.InitResponse.FromString,
+                _registered_method=True)
 
 
 class AvServerServicer(object):
@@ -52,6 +58,13 @@ class AvServerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Init(self, request, context):
+        """Initialize the AV system with configuration parameters
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AvServerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -59,6 +72,11 @@ def add_AvServerServicer_to_server(servicer, server):
                     servicer.Ping,
                     request_deserializer=empty__pb2.Empty.FromString,
                     response_serializer=pong__pb2.Pong.SerializeToString,
+            ),
+            'Init': grpc.unary_unary_rpc_method_handler(
+                    servicer.Init,
+                    request_deserializer=av__server__pb2.AvServerMessages.InitRequest.FromString,
+                    response_serializer=av__server__pb2.AvServerMessages.InitResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -88,6 +106,33 @@ class AvServer(object):
             '/sbsvf_api.AvServer/Ping',
             empty__pb2.Empty.SerializeToString,
             pong__pb2.Pong.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Init(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sbsvf_api.AvServer/Init',
+            av__server__pb2.AvServerMessages.InitRequest.SerializeToString,
+            av__server__pb2.AvServerMessages.InitResponse.FromString,
             options,
             channel_credentials,
             insecure,

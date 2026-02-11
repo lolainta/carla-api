@@ -43,18 +43,18 @@ class SimServerStub(object):
                 _registered_method=True)
         self.Init = channel.unary_unary(
                 '/sbsvf_api.SimServer/Init',
-                request_serializer=sim__server__pb2.InitRequest.SerializeToString,
-                response_deserializer=sim__server__pb2.InitResponse.FromString,
+                request_serializer=sim__server__pb2.SimServerMessages.InitRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.InitResponse.FromString,
                 _registered_method=True)
         self.Reset = channel.unary_unary(
                 '/sbsvf_api.SimServer/Reset',
-                request_serializer=sim__server__pb2.ResetRequest.SerializeToString,
-                response_deserializer=sim__server__pb2.ResetResponse.FromString,
+                request_serializer=sim__server__pb2.SimServerMessages.ResetRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.ResetResponse.FromString,
                 _registered_method=True)
         self.Step = channel.unary_unary(
                 '/sbsvf_api.SimServer/Step',
-                request_serializer=sim__server__pb2.StepRequest.SerializeToString,
-                response_deserializer=sim__server__pb2.StepResponse.FromString,
+                request_serializer=sim__server__pb2.SimServerMessages.StepRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.StepResponse.FromString,
                 _registered_method=True)
         self.Stop = channel.unary_unary(
                 '/sbsvf_api.SimServer/Stop',
@@ -64,7 +64,7 @@ class SimServerStub(object):
         self.ShouldQuit = channel.unary_unary(
                 '/sbsvf_api.SimServer/ShouldQuit',
                 request_serializer=empty__pb2.Empty.SerializeToString,
-                response_deserializer=sim__server__pb2.ShouldQuitResponse.FromString,
+                response_deserializer=sim__server__pb2.SimServerMessages.ShouldQuitResponse.FromString,
                 _registered_method=True)
 
 
@@ -123,18 +123,18 @@ def add_SimServerServicer_to_server(servicer, server):
             ),
             'Init': grpc.unary_unary_rpc_method_handler(
                     servicer.Init,
-                    request_deserializer=sim__server__pb2.InitRequest.FromString,
-                    response_serializer=sim__server__pb2.InitResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.InitRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.InitResponse.SerializeToString,
             ),
             'Reset': grpc.unary_unary_rpc_method_handler(
                     servicer.Reset,
-                    request_deserializer=sim__server__pb2.ResetRequest.FromString,
-                    response_serializer=sim__server__pb2.ResetResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.ResetRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.ResetResponse.SerializeToString,
             ),
             'Step': grpc.unary_unary_rpc_method_handler(
                     servicer.Step,
-                    request_deserializer=sim__server__pb2.StepRequest.FromString,
-                    response_serializer=sim__server__pb2.StepResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.StepRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.StepResponse.SerializeToString,
             ),
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
@@ -144,7 +144,7 @@ def add_SimServerServicer_to_server(servicer, server):
             'ShouldQuit': grpc.unary_unary_rpc_method_handler(
                     servicer.ShouldQuit,
                     request_deserializer=empty__pb2.Empty.FromString,
-                    response_serializer=sim__server__pb2.ShouldQuitResponse.SerializeToString,
+                    response_serializer=sim__server__pb2.SimServerMessages.ShouldQuitResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -199,8 +199,8 @@ class SimServer(object):
             request,
             target,
             '/sbsvf_api.SimServer/Init',
-            sim__server__pb2.InitRequest.SerializeToString,
-            sim__server__pb2.InitResponse.FromString,
+            sim__server__pb2.SimServerMessages.InitRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.InitResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -226,8 +226,8 @@ class SimServer(object):
             request,
             target,
             '/sbsvf_api.SimServer/Reset',
-            sim__server__pb2.ResetRequest.SerializeToString,
-            sim__server__pb2.ResetResponse.FromString,
+            sim__server__pb2.SimServerMessages.ResetRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.ResetResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -253,8 +253,8 @@ class SimServer(object):
             request,
             target,
             '/sbsvf_api.SimServer/Step',
-            sim__server__pb2.StepRequest.SerializeToString,
-            sim__server__pb2.StepResponse.FromString,
+            sim__server__pb2.SimServerMessages.StepRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.StepResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -308,7 +308,7 @@ class SimServer(object):
             target,
             '/sbsvf_api.SimServer/ShouldQuit',
             empty__pb2.Empty.SerializeToString,
-            sim__server__pb2.ShouldQuitResponse.FromString,
+            sim__server__pb2.SimServerMessages.ShouldQuitResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -15,50 +15,52 @@ service SimServer {
   rpc Ping(Empty) returns (Pong);
 
   // Initialize the simulation (e.g., load maps, set weather)
-  rpc Init(InitRequest) returns (InitResponse);
+  rpc Init(SimServerMessages.InitRequest) returns (SimServerMessages.InitResponse);
 
   // Reset the simulation with a new scenario
-  rpc Reset(ResetRequest) returns (ResetResponse);
+  rpc Reset(SimServerMessages.ResetRequest) returns (SimServerMessages.ResetResponse);
 
   // Advance the simulation by one step with the provided control command
-  rpc Step(StepRequest) returns (StepResponse);
+  rpc Step(SimServerMessages.StepRequest) returns (SimServerMessages.StepResponse);
 
   // Stop the simulation
   rpc Stop(Empty) returns (Empty);
 
   // Check if the simulation should quit
-  rpc ShouldQuit(Empty) returns (ShouldQuitResponse);
+  rpc ShouldQuit(Empty) returns (SimServerMessages.ShouldQuitResponse);
 }
 
-message InitRequest {
-  Config config = 1;
-  double dt     = 2;
-}
+message SimServerMessages {
+  message InitRequest {
+    Config config = 1;
+    double dt     = 2;
+  }
 
-message InitResponse {
-  bool   success = 1;
-  string msg     = 2;
-}
+  message InitResponse {
+    bool   success = 1;
+    string msg     = 2;
+  }
 
-message StepRequest {
-  CtrlCmd ctrl_cmd     = 1;
-  int64   timestamp_ns = 2;
-}
+  message StepRequest {
+    CtrlCmd ctrl_cmd     = 1;
+    int64   timestamp_ns = 2;
+  }
 
-message StepResponse {
-  repeated ObjectState objects = 1;
-}
+  message StepResponse {
+    repeated ObjectState objects = 1;
+  }
 
-message ResetRequest {
-  string              output_dir    = 1;
-  ScenarioPack        scenario_pack = 2;
-  map<string, string> params        = 3;
-}
+  message ResetRequest {
+    string              output_dir    = 1;
+    ScenarioPack        scenario_pack = 2;
+    map<string, string> params        = 3;
+  }
 
-message ResetResponse {
-  repeated ObjectState objects = 1;
-}
+  message ResetResponse {
+    repeated ObjectState objects = 1;
+  }
 
-message ShouldQuitResponse {
-  bool should_quit = 1;
+  message ShouldQuitResponse {
+    bool should_quit = 1;
+  }
 }

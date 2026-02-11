@@ -22,17 +22,24 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from . import config_pb2 as config__pb2
 from . import empty_pb2 as empty__pb2
 from . import pong_pb2 as pong__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61v_server.proto\x12\tsbsvf_api\x1a\x0b\x65mpty.proto\x1a\npong.proto25\n\x08\x41vServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pongb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61v_server.proto\x12\tsbsvf_api\x1a\x0c\x63onfig.proto\x1a\x0b\x65mpty.proto\x1a\npong.proto\"r\n\x10\x41vServerMessages\x1a\x30\n\x0bInitRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.sbsvf_api.Config\x1a,\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\x90\x01\n\x08\x41vServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pong\x12Y\n\x04Init\x12\'.sbsvf_api.AvServerMessages.InitRequest\x1a(.sbsvf_api.AvServerMessages.InitResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'av_server_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_AVSERVER']._serialized_start=55
-  _globals['_AVSERVER']._serialized_end=108
+  _globals['_AVSERVERMESSAGES']._serialized_start=69
+  _globals['_AVSERVERMESSAGES']._serialized_end=183
+  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_start=89
+  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_end=137
+  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_start=139
+  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_end=183
+  _globals['_AVSERVER']._serialized_start=186
+  _globals['_AVSERVER']._serialized_end=330
 # @@protoc_insertion_point(module_scope)
