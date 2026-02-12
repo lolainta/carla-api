@@ -33,10 +33,9 @@ service AvServer {
 message AvServerMessages {
   message InitRequest {
     Config       config        = 1;
-    Path       output_dir    = 2;
+    Path         output_dir    = 2;
     ScenarioPack scenario_pack = 3;
     double       dt            = 4;
-
   }
 
   message InitResponse {
@@ -45,7 +44,7 @@ message AvServerMessages {
   }
 
   message ResetRequest {
-    string               output_dir          = 1;
+    Path                 output_dir          = 1;
     ScenarioPack         scenario_pack       = 2;
     repeated ObjectState initial_observation = 3;
   }

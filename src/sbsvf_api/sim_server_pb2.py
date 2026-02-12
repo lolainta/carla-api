@@ -31,7 +31,7 @@ from . import pong_pb2 as pong__pb2
 from . import scenario_pb2 as scenario__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10sim_server.proto\x12\tsbsvf_api\x1a\x0c\x63onfig.proto\x1a\rcontrol.proto\x1a\x0b\x65mpty.proto\x1a\x0cobject.proto\x1a\npath.proto\x1a\npong.proto\x1a\x0escenario.proto\"\xd8\x04\n\x11SimServerMessages\x1a\x61\n\x0bInitRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.sbsvf_api.Config\x12\n\n\x02\x64t\x18\x02 \x01(\x01\x12#\n\noutput_dir\x18\x03 \x01(\x0b\x32\x0f.sbsvf_api.Path\x1a,\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\x1a\xc8\x01\n\x0cResetRequest\x12\x12\n\noutput_dir\x18\x01 \x01(\t\x12.\n\rscenario_pack\x18\x02 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x12\x45\n\x06params\x18\x03 \x03(\x0b\x32\x35.sbsvf_api.SimServerMessages.ResetRequest.ParamsEntry\x1a-\n\x0bParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x38\n\rResetResponse\x12\'\n\x07objects\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1aI\n\x0bStepRequest\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x12\x14\n\x0ctimestamp_ns\x18\x02 \x01(\x03\x1a\x37\n\x0cStepResponse\x12\'\n\x07objects\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1a)\n\x12ShouldQuitResponse\x12\x13\n\x0bshould_quit\x18\x01 \x01(\x08\x32\xcd\x03\n\tSimServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pong\x12[\n\x04Init\x12(.sbsvf_api.SimServerMessages.InitRequest\x1a).sbsvf_api.SimServerMessages.InitResponse\x12^\n\x05Reset\x12).sbsvf_api.SimServerMessages.ResetRequest\x1a*.sbsvf_api.SimServerMessages.ResetResponse\x12[\n\x04Step\x12(.sbsvf_api.SimServerMessages.StepRequest\x1a).sbsvf_api.SimServerMessages.StepResponse\x12*\n\x04Stop\x12\x10.sbsvf_api.Empty\x1a\x10.sbsvf_api.Empty\x12O\n\nShouldQuit\x12\x10.sbsvf_api.Empty\x1a/.sbsvf_api.SimServerMessages.ShouldQuitResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10sim_server.proto\x12\tsbsvf_api\x1a\x0c\x63onfig.proto\x1a\rcontrol.proto\x1a\x0b\x65mpty.proto\x1a\x0cobject.proto\x1a\npath.proto\x1a\npong.proto\x1a\x0escenario.proto\"\xe9\x04\n\x11SimServerMessages\x1a\x61\n\x0bInitRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.sbsvf_api.Config\x12#\n\noutput_dir\x18\x02 \x01(\x0b\x32\x0f.sbsvf_api.Path\x12\n\n\x02\x64t\x18\x03 \x01(\x01\x1a,\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\x1a\xd9\x01\n\x0cResetRequest\x12#\n\noutput_dir\x18\x01 \x01(\x0b\x32\x0f.sbsvf_api.Path\x12.\n\rscenario_pack\x18\x02 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x12\x45\n\x06params\x18\x03 \x03(\x0b\x32\x35.sbsvf_api.SimServerMessages.ResetRequest.ParamsEntry\x1a-\n\x0bParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x38\n\rResetResponse\x12\'\n\x07objects\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1aI\n\x0bStepRequest\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x12\x14\n\x0ctimestamp_ns\x18\x02 \x01(\x03\x1a\x37\n\x0cStepResponse\x12\'\n\x07objects\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1a)\n\x12ShouldQuitResponse\x12\x13\n\x0bshould_quit\x18\x01 \x01(\x08\x32\xcd\x03\n\tSimServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pong\x12[\n\x04Init\x12(.sbsvf_api.SimServerMessages.InitRequest\x1a).sbsvf_api.SimServerMessages.InitResponse\x12^\n\x05Reset\x12).sbsvf_api.SimServerMessages.ResetRequest\x1a*.sbsvf_api.SimServerMessages.ResetResponse\x12[\n\x04Step\x12(.sbsvf_api.SimServerMessages.StepRequest\x1a).sbsvf_api.SimServerMessages.StepResponse\x12*\n\x04Stop\x12\x10.sbsvf_api.Empty\x1a\x10.sbsvf_api.Empty\x12O\n\nShouldQuit\x12\x10.sbsvf_api.Empty\x1a/.sbsvf_api.SimServerMessages.ShouldQuitResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,23 +41,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._loaded_options = None
   _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._serialized_options = b'8\001'
   _globals['_SIMSERVERMESSAGES']._serialized_start=128
-  _globals['_SIMSERVERMESSAGES']._serialized_end=728
+  _globals['_SIMSERVERMESSAGES']._serialized_end=745
   _globals['_SIMSERVERMESSAGES_INITREQUEST']._serialized_start=149
   _globals['_SIMSERVERMESSAGES_INITREQUEST']._serialized_end=246
   _globals['_SIMSERVERMESSAGES_INITRESPONSE']._serialized_start=248
   _globals['_SIMSERVERMESSAGES_INITRESPONSE']._serialized_end=292
   _globals['_SIMSERVERMESSAGES_RESETREQUEST']._serialized_start=295
-  _globals['_SIMSERVERMESSAGES_RESETREQUEST']._serialized_end=495
-  _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._serialized_start=450
-  _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._serialized_end=495
-  _globals['_SIMSERVERMESSAGES_RESETRESPONSE']._serialized_start=497
-  _globals['_SIMSERVERMESSAGES_RESETRESPONSE']._serialized_end=553
-  _globals['_SIMSERVERMESSAGES_STEPREQUEST']._serialized_start=555
-  _globals['_SIMSERVERMESSAGES_STEPREQUEST']._serialized_end=628
-  _globals['_SIMSERVERMESSAGES_STEPRESPONSE']._serialized_start=630
-  _globals['_SIMSERVERMESSAGES_STEPRESPONSE']._serialized_end=685
-  _globals['_SIMSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_start=687
-  _globals['_SIMSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_end=728
-  _globals['_SIMSERVER']._serialized_start=731
-  _globals['_SIMSERVER']._serialized_end=1192
+  _globals['_SIMSERVERMESSAGES_RESETREQUEST']._serialized_end=512
+  _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._serialized_start=467
+  _globals['_SIMSERVERMESSAGES_RESETREQUEST_PARAMSENTRY']._serialized_end=512
+  _globals['_SIMSERVERMESSAGES_RESETRESPONSE']._serialized_start=514
+  _globals['_SIMSERVERMESSAGES_RESETRESPONSE']._serialized_end=570
+  _globals['_SIMSERVERMESSAGES_STEPREQUEST']._serialized_start=572
+  _globals['_SIMSERVERMESSAGES_STEPREQUEST']._serialized_end=645
+  _globals['_SIMSERVERMESSAGES_STEPRESPONSE']._serialized_start=647
+  _globals['_SIMSERVERMESSAGES_STEPRESPONSE']._serialized_end=702
+  _globals['_SIMSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_start=704
+  _globals['_SIMSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_end=745
+  _globals['_SIMSERVER']._serialized_start=748
+  _globals['_SIMSERVER']._serialized_end=1209
 # @@protoc_insertion_point(module_scope)
