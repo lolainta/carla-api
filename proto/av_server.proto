@@ -7,6 +7,7 @@ import "control.proto";
 import "empty.proto";
 import "object.proto";
 import "pong.proto";
+import "path.proto";
 import "scenario.proto";
 
 service AvServer {
@@ -32,7 +33,7 @@ service AvServer {
 message AvServerMessages {
   message InitRequest {
     Config       config        = 1;
-    string       output_dir    = 2;
+    Path       output_dir    = 2;
     ScenarioPack scenario_pack = 3;
     double       dt            = 4;
 
