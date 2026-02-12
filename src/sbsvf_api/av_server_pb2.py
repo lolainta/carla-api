@@ -30,7 +30,7 @@ from . import pong_pb2 as pong__pb2
 from . import scenario_pb2 as scenario__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61v_server.proto\x12\tsbsvf_api\x1a\x0c\x63onfig.proto\x1a\rcontrol.proto\x1a\x0b\x65mpty.proto\x1a\x0cobject.proto\x1a\npong.proto\x1a\x0escenario.proto\"\xaa\x04\n\x10\x41vServerMessages\x1at\n\x0bInitRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.sbsvf_api.Config\x12\x12\n\noutput_dir\x18\x02 \x01(\t\x12.\n\rscenario_pack\x18\x03 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x1a,\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\x1a\x87\x01\n\x0cResetRequest\x12\x12\n\noutput_dir\x18\x01 \x01(\t\x12.\n\rscenario_pack\x18\x02 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x12\x33\n\x13initial_observation\x18\x03 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1a\x35\n\rResetResponse\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x1aP\n\x0bStepRequest\x12+\n\x0bobservation\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x12\x14\n\x0ctimestamp_ns\x18\x02 \x01(\x03\x1a\x34\n\x0cStepResponse\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x1a)\n\x12ShouldQuitResponse\x12\x13\n\x0bshould_quit\x18\x01 \x01(\x08\x32\xc5\x03\n\x08\x41vServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pong\x12Y\n\x04Init\x12\'.sbsvf_api.AvServerMessages.InitRequest\x1a(.sbsvf_api.AvServerMessages.InitResponse\x12\\\n\x05Reset\x12(.sbsvf_api.AvServerMessages.ResetRequest\x1a).sbsvf_api.AvServerMessages.ResetResponse\x12Y\n\x04Step\x12\'.sbsvf_api.AvServerMessages.StepRequest\x1a(.sbsvf_api.AvServerMessages.StepResponse\x12*\n\x04Stop\x12\x10.sbsvf_api.Empty\x1a\x10.sbsvf_api.Empty\x12N\n\nShouldQuit\x12\x10.sbsvf_api.Empty\x1a..sbsvf_api.AvServerMessages.ShouldQuitResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61v_server.proto\x12\tsbsvf_api\x1a\x0c\x63onfig.proto\x1a\rcontrol.proto\x1a\x0b\x65mpty.proto\x1a\x0cobject.proto\x1a\npong.proto\x1a\x0escenario.proto\"\xb7\x04\n\x10\x41vServerMessages\x1a\x80\x01\n\x0bInitRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.sbsvf_api.Config\x12\x12\n\noutput_dir\x18\x02 \x01(\t\x12.\n\rscenario_pack\x18\x03 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x12\n\n\x02\x64t\x18\x04 \x01(\x01\x1a,\n\x0cInitResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\x1a\x87\x01\n\x0cResetRequest\x12\x12\n\noutput_dir\x18\x01 \x01(\t\x12.\n\rscenario_pack\x18\x02 \x01(\x0b\x32\x17.sbsvf_api.ScenarioPack\x12\x33\n\x13initial_observation\x18\x03 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x1a\x35\n\rResetResponse\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x1aP\n\x0bStepRequest\x12+\n\x0bobservation\x18\x01 \x03(\x0b\x32\x16.sbsvf_api.ObjectState\x12\x14\n\x0ctimestamp_ns\x18\x02 \x01(\x03\x1a\x34\n\x0cStepResponse\x12$\n\x08\x63trl_cmd\x18\x01 \x01(\x0b\x32\x12.sbsvf_api.CtrlCmd\x1a)\n\x12ShouldQuitResponse\x12\x13\n\x0bshould_quit\x18\x01 \x01(\x08\x32\xc5\x03\n\x08\x41vServer\x12)\n\x04Ping\x12\x10.sbsvf_api.Empty\x1a\x0f.sbsvf_api.Pong\x12Y\n\x04Init\x12\'.sbsvf_api.AvServerMessages.InitRequest\x1a(.sbsvf_api.AvServerMessages.InitResponse\x12\\\n\x05Reset\x12(.sbsvf_api.AvServerMessages.ResetRequest\x1a).sbsvf_api.AvServerMessages.ResetResponse\x12Y\n\x04Step\x12\'.sbsvf_api.AvServerMessages.StepRequest\x1a(.sbsvf_api.AvServerMessages.StepResponse\x12*\n\x04Stop\x12\x10.sbsvf_api.Empty\x1a\x10.sbsvf_api.Empty\x12N\n\nShouldQuit\x12\x10.sbsvf_api.Empty\x1a..sbsvf_api.AvServerMessages.ShouldQuitResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,21 +38,21 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'av_server_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_AVSERVERMESSAGES']._serialized_start=115
-  _globals['_AVSERVERMESSAGES']._serialized_end=669
-  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_start=135
-  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_end=251
-  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_start=253
-  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_end=297
-  _globals['_AVSERVERMESSAGES_RESETREQUEST']._serialized_start=300
-  _globals['_AVSERVERMESSAGES_RESETREQUEST']._serialized_end=435
-  _globals['_AVSERVERMESSAGES_RESETRESPONSE']._serialized_start=437
-  _globals['_AVSERVERMESSAGES_RESETRESPONSE']._serialized_end=490
-  _globals['_AVSERVERMESSAGES_STEPREQUEST']._serialized_start=492
-  _globals['_AVSERVERMESSAGES_STEPREQUEST']._serialized_end=572
-  _globals['_AVSERVERMESSAGES_STEPRESPONSE']._serialized_start=574
-  _globals['_AVSERVERMESSAGES_STEPRESPONSE']._serialized_end=626
-  _globals['_AVSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_start=628
-  _globals['_AVSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_end=669
-  _globals['_AVSERVER']._serialized_start=672
-  _globals['_AVSERVER']._serialized_end=1125
+  _globals['_AVSERVERMESSAGES']._serialized_end=682
+  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_start=136
+  _globals['_AVSERVERMESSAGES_INITREQUEST']._serialized_end=264
+  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_start=266
+  _globals['_AVSERVERMESSAGES_INITRESPONSE']._serialized_end=310
+  _globals['_AVSERVERMESSAGES_RESETREQUEST']._serialized_start=313
+  _globals['_AVSERVERMESSAGES_RESETREQUEST']._serialized_end=448
+  _globals['_AVSERVERMESSAGES_RESETRESPONSE']._serialized_start=450
+  _globals['_AVSERVERMESSAGES_RESETRESPONSE']._serialized_end=503
+  _globals['_AVSERVERMESSAGES_STEPREQUEST']._serialized_start=505
+  _globals['_AVSERVERMESSAGES_STEPREQUEST']._serialized_end=585
+  _globals['_AVSERVERMESSAGES_STEPRESPONSE']._serialized_start=587
+  _globals['_AVSERVERMESSAGES_STEPRESPONSE']._serialized_end=639
+  _globals['_AVSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_start=641
+  _globals['_AVSERVERMESSAGES_SHOULDQUITRESPONSE']._serialized_end=682
+  _globals['_AVSERVER']._serialized_start=685
+  _globals['_AVSERVER']._serialized_end=1138
 # @@protoc_insertion_point(module_scope)
