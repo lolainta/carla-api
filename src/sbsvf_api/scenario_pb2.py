@@ -26,27 +26,23 @@ from . import position_pb2 as position__pb2
 from . import path_pb2 as path__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0escenario.proto\x12\tsbsvf_api\x1a\x0eposition.proto\x1a\npath.proto\"\x85\x03\n\x0cScenarioPack\x12\x0c\n\x04name\x18\x01 \x01(\t\x12/\n\x04maps\x18\x02 \x03(\x0b\x32!.sbsvf_api.ScenarioPack.MapsEntry\x12\x39\n\tscenarios\x18\x03 \x03(\x0b\x32&.sbsvf_api.ScenarioPack.ScenariosEntry\x12.\n\x10param_range_file\x18\x04 \x01(\x0b\x32\x0f.sbsvf_api.PathH\x00\x88\x01\x01\x12!\n\x03\x65go\x18\x05 \x01(\x0b\x32\x14.sbsvf_api.EgoConfig\x12\x12\n\ntimeout_ns\x18\x06 \x01(\x03\x1a<\n\tMapsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.sbsvf_api.Path:\x02\x38\x01\x1a\x41\n\x0eScenariosEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.sbsvf_api.Path:\x02\x38\x01\x42\x13\n\x11_param_range_file\"{\n\tEgoConfig\x12\x14\n\x0ctarget_speed\x18\x01 \x01(\x01\x12,\n\x0cspawn_config\x18\x02 \x01(\x0b\x32\x16.sbsvf_api.SpawnConfig\x12*\n\x0bgoal_config\x18\x03 \x01(\x0b\x32\x15.sbsvf_api.GoalConfig\"C\n\x0bSpawnConfig\x12%\n\x08position\x18\x01 \x01(\x0b\x32\x13.sbsvf_api.Position\x12\r\n\x05speed\x18\x02 \x01(\x01\"3\n\nGoalConfig\x12%\n\x08position\x18\x01 \x01(\x0b\x32\x13.sbsvf_api.Positionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0escenario.proto\x12\tsbsvf_api\x1a\x0eposition.proto\x1a\npath.proto\"\xa8\x02\n\x0cScenarioPack\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08map_name\x18\x02 \x01(\t\x12\x39\n\tscenarios\x18\x03 \x03(\x0b\x32&.sbsvf_api.ScenarioPack.ScenariosEntry\x12.\n\x10param_range_file\x18\x04 \x01(\x0b\x32\x0f.sbsvf_api.PathH\x00\x88\x01\x01\x12!\n\x03\x65go\x18\x05 \x01(\x0b\x32\x14.sbsvf_api.EgoConfig\x12\x12\n\ntimeout_ns\x18\x06 \x01(\x03\x1a\x41\n\x0eScenariosEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.sbsvf_api.Path:\x02\x38\x01\x42\x13\n\x11_param_range_file\"{\n\tEgoConfig\x12\x14\n\x0ctarget_speed\x18\x01 \x01(\x01\x12,\n\x0cspawn_config\x18\x02 \x01(\x0b\x32\x16.sbsvf_api.SpawnConfig\x12*\n\x0bgoal_config\x18\x03 \x01(\x0b\x32\x15.sbsvf_api.GoalConfig\"C\n\x0bSpawnConfig\x12%\n\x08position\x18\x01 \x01(\x0b\x32\x13.sbsvf_api.Position\x12\r\n\x05speed\x18\x02 \x01(\x01\"3\n\nGoalConfig\x12%\n\x08position\x18\x01 \x01(\x0b\x32\x13.sbsvf_api.Positionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'scenario_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_SCENARIOPACK_MAPSENTRY']._loaded_options = None
-  _globals['_SCENARIOPACK_MAPSENTRY']._serialized_options = b'8\001'
   _globals['_SCENARIOPACK_SCENARIOSENTRY']._loaded_options = None
   _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_options = b'8\001'
   _globals['_SCENARIOPACK']._serialized_start=58
-  _globals['_SCENARIOPACK']._serialized_end=447
-  _globals['_SCENARIOPACK_MAPSENTRY']._serialized_start=299
-  _globals['_SCENARIOPACK_MAPSENTRY']._serialized_end=359
-  _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_start=361
-  _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_end=426
-  _globals['_EGOCONFIG']._serialized_start=449
-  _globals['_EGOCONFIG']._serialized_end=572
-  _globals['_SPAWNCONFIG']._serialized_start=574
-  _globals['_SPAWNCONFIG']._serialized_end=641
-  _globals['_GOALCONFIG']._serialized_start=643
-  _globals['_GOALCONFIG']._serialized_end=694
+  _globals['_SCENARIOPACK']._serialized_end=354
+  _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_start=268
+  _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_end=333
+  _globals['_EGOCONFIG']._serialized_start=356
+  _globals['_EGOCONFIG']._serialized_end=479
+  _globals['_SPAWNCONFIG']._serialized_start=481
+  _globals['_SPAWNCONFIG']._serialized_end=548
+  _globals['_GOALCONFIG']._serialized_start=550
+  _globals['_GOALCONFIG']._serialized_end=601
 # @@protoc_insertion_point(module_scope)

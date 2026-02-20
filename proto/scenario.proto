@@ -6,7 +6,7 @@ import "position.proto";
 import "path.proto";
 message ScenarioPack {
   string            name             = 1;
-  map<string, Path> maps             = 2;
+  string            map_name         = 2;
   map<string, Path> scenarios        = 3;
   optional Path     param_range_file = 4;
   EgoConfig         ego              = 5;
