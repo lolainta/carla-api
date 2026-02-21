@@ -5,12 +5,13 @@ package sbsvf_api;
 import "google/protobuf/struct.proto";
 
 enum CtrlMode {
-  NONE           = 0;
-  TRAJECTORY     = 1;
-  THROTTLE_STEER = 2;
-  WAYPOINTS      = 3;
-  POSITION       = 4;
-  ACKERMANN      = 5;
+  NONE                 = 0;
+  TRAJECTORY           = 1;
+  THROTTLE_STEER       = 2;
+  WAYPOINTS            = 3;
+  POSITION             = 4;
+  ACKERMANN            = 5;
+  THROTTLE_STEER_BREAK = 6;
 }
 
 message CtrlCmd {

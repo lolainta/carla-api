@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcontrol.proto\x12\tsbsvf_api\x1a\x1cgoogle/protobuf/struct.proto\"V\n\x07\x43trlCmd\x12!\n\x04mode\x18\x01 \x01(\x0e\x32\x13.sbsvf_api.CtrlMode\x12(\n\x07payload\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct*d\n\x08\x43trlMode\x12\x08\n\x04NONE\x10\x00\x12\x0e\n\nTRAJECTORY\x10\x01\x12\x12\n\x0eTHROTTLE_STEER\x10\x02\x12\r\n\tWAYPOINTS\x10\x03\x12\x0c\n\x08POSITION\x10\x04\x12\r\n\tACKERMANN\x10\x05\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcontrol.proto\x12\tsbsvf_api\x1a\x1cgoogle/protobuf/struct.proto\"V\n\x07\x43trlCmd\x12!\n\x04mode\x18\x01 \x01(\x0e\x32\x13.sbsvf_api.CtrlMode\x12(\n\x07payload\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct*~\n\x08\x43trlMode\x12\x08\n\x04NONE\x10\x00\x12\x0e\n\nTRAJECTORY\x10\x01\x12\x12\n\x0eTHROTTLE_STEER\x10\x02\x12\r\n\tWAYPOINTS\x10\x03\x12\x0c\n\x08POSITION\x10\x04\x12\r\n\tACKERMANN\x10\x05\x12\x18\n\x14THROTTLE_STEER_BREAK\x10\x06\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'control_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_CTRLMODE']._serialized_start=146
-  _globals['_CTRLMODE']._serialized_end=246
+  _globals['_CTRLMODE']._serialized_end=272
   _globals['_CTRLCMD']._serialized_start=58
   _globals['_CTRLCMD']._serialized_end=144
 # @@protoc_insertion_point(module_scope)
