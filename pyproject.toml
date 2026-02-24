@@ -1,9 +1,9 @@
 [project]
 name = "sbsvf-api"
-version = "0.1.13"
+version = "0.1.15"
 description = "gRPC (SIM/AV) API contract for SBSVF"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 dependencies = [
     "grpcio>=1.62.3",
     "protobuf>=4.24.4",
