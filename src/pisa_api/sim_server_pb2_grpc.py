@@ -3,9 +3,9 @@
 import grpc
 import warnings
 
-from . import av_server_pb2 as av__server__pb2
 from . import empty_pb2 as empty__pb2
 from . import pong_pb2 as pong__pb2
+from . import sim_server_pb2 as sim__server__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -20,14 +20,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in av_server_pb2_grpc.py depends on'
+        + f' but the generated code in sim_server_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class AvServerStub(object):
+class SimServerStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -37,38 +37,38 @@ class AvServerStub(object):
             channel: A grpc.Channel.
         """
         self.Ping = channel.unary_unary(
-                '/sbsvf_api.AvServer/Ping',
+                '/pisa_api.SimServer/Ping',
                 request_serializer=empty__pb2.Empty.SerializeToString,
                 response_deserializer=pong__pb2.Pong.FromString,
                 _registered_method=True)
         self.Init = channel.unary_unary(
-                '/sbsvf_api.AvServer/Init',
-                request_serializer=av__server__pb2.AvServerMessages.InitRequest.SerializeToString,
-                response_deserializer=av__server__pb2.AvServerMessages.InitResponse.FromString,
+                '/pisa_api.SimServer/Init',
+                request_serializer=sim__server__pb2.SimServerMessages.InitRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.InitResponse.FromString,
                 _registered_method=True)
         self.Reset = channel.unary_unary(
-                '/sbsvf_api.AvServer/Reset',
-                request_serializer=av__server__pb2.AvServerMessages.ResetRequest.SerializeToString,
-                response_deserializer=av__server__pb2.AvServerMessages.ResetResponse.FromString,
+                '/pisa_api.SimServer/Reset',
+                request_serializer=sim__server__pb2.SimServerMessages.ResetRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.ResetResponse.FromString,
                 _registered_method=True)
         self.Step = channel.unary_unary(
-                '/sbsvf_api.AvServer/Step',
-                request_serializer=av__server__pb2.AvServerMessages.StepRequest.SerializeToString,
-                response_deserializer=av__server__pb2.AvServerMessages.StepResponse.FromString,
+                '/pisa_api.SimServer/Step',
+                request_serializer=sim__server__pb2.SimServerMessages.StepRequest.SerializeToString,
+                response_deserializer=sim__server__pb2.SimServerMessages.StepResponse.FromString,
                 _registered_method=True)
         self.Stop = channel.unary_unary(
-                '/sbsvf_api.AvServer/Stop',
+                '/pisa_api.SimServer/Stop',
                 request_serializer=empty__pb2.Empty.SerializeToString,
                 response_deserializer=empty__pb2.Empty.FromString,
                 _registered_method=True)
         self.ShouldQuit = channel.unary_unary(
-                '/sbsvf_api.AvServer/ShouldQuit',
+                '/pisa_api.SimServer/ShouldQuit',
                 request_serializer=empty__pb2.Empty.SerializeToString,
-                response_deserializer=av__server__pb2.AvServerMessages.ShouldQuitResponse.FromString,
+                response_deserializer=sim__server__pb2.SimServerMessages.ShouldQuitResponse.FromString,
                 _registered_method=True)
 
 
-class AvServerServicer(object):
+class SimServerServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Ping(self, request, context):
@@ -79,42 +79,42 @@ class AvServerServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Init(self, request, context):
-        """Initialize the AV system with configuration parameters
+        """Initialize the simulation (e.g., load maps, set weather)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Reset(self, request, context):
-        """Reset the AV system with a new scenario and initial observation
+        """Reset the simulation with a new scenario
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Step(self, request, context):
-        """Advance the AV system by one step with the provided observation
+        """Advance the simulation by one step with the provided control command
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stop the AV system
+        """Stop the simulation
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ShouldQuit(self, request, context):
-        """Check if the AV system should quit
+        """Check if the simulation should quit
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_AvServerServicer_to_server(servicer, server):
+def add_SimServerServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
@@ -123,18 +123,18 @@ def add_AvServerServicer_to_server(servicer, server):
             ),
             'Init': grpc.unary_unary_rpc_method_handler(
                     servicer.Init,
-                    request_deserializer=av__server__pb2.AvServerMessages.InitRequest.FromString,
-                    response_serializer=av__server__pb2.AvServerMessages.InitResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.InitRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.InitResponse.SerializeToString,
             ),
             'Reset': grpc.unary_unary_rpc_method_handler(
                     servicer.Reset,
-                    request_deserializer=av__server__pb2.AvServerMessages.ResetRequest.FromString,
-                    response_serializer=av__server__pb2.AvServerMessages.ResetResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.ResetRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.ResetResponse.SerializeToString,
             ),
             'Step': grpc.unary_unary_rpc_method_handler(
                     servicer.Step,
-                    request_deserializer=av__server__pb2.AvServerMessages.StepRequest.FromString,
-                    response_serializer=av__server__pb2.AvServerMessages.StepResponse.SerializeToString,
+                    request_deserializer=sim__server__pb2.SimServerMessages.StepRequest.FromString,
+                    response_serializer=sim__server__pb2.SimServerMessages.StepResponse.SerializeToString,
             ),
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
@@ -144,17 +144,17 @@ def add_AvServerServicer_to_server(servicer, server):
             'ShouldQuit': grpc.unary_unary_rpc_method_handler(
                     servicer.ShouldQuit,
                     request_deserializer=empty__pb2.Empty.FromString,
-                    response_serializer=av__server__pb2.AvServerMessages.ShouldQuitResponse.SerializeToString,
+                    response_serializer=sim__server__pb2.SimServerMessages.ShouldQuitResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'sbsvf_api.AvServer', rpc_method_handlers)
+            'pisa_api.SimServer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('sbsvf_api.AvServer', rpc_method_handlers)
+    server.add_registered_method_handlers('pisa_api.SimServer', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class AvServer(object):
+class SimServer(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -171,7 +171,7 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/Ping',
+            '/pisa_api.SimServer/Ping',
             empty__pb2.Empty.SerializeToString,
             pong__pb2.Pong.FromString,
             options,
@@ -198,9 +198,9 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/Init',
-            av__server__pb2.AvServerMessages.InitRequest.SerializeToString,
-            av__server__pb2.AvServerMessages.InitResponse.FromString,
+            '/pisa_api.SimServer/Init',
+            sim__server__pb2.SimServerMessages.InitRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.InitResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -225,9 +225,9 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/Reset',
-            av__server__pb2.AvServerMessages.ResetRequest.SerializeToString,
-            av__server__pb2.AvServerMessages.ResetResponse.FromString,
+            '/pisa_api.SimServer/Reset',
+            sim__server__pb2.SimServerMessages.ResetRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.ResetResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -252,9 +252,9 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/Step',
-            av__server__pb2.AvServerMessages.StepRequest.SerializeToString,
-            av__server__pb2.AvServerMessages.StepResponse.FromString,
+            '/pisa_api.SimServer/Step',
+            sim__server__pb2.SimServerMessages.StepRequest.SerializeToString,
+            sim__server__pb2.SimServerMessages.StepResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -279,7 +279,7 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/Stop',
+            '/pisa_api.SimServer/Stop',
             empty__pb2.Empty.SerializeToString,
             empty__pb2.Empty.FromString,
             options,
@@ -306,9 +306,9 @@ class AvServer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/sbsvf_api.AvServer/ShouldQuit',
+            '/pisa_api.SimServer/ShouldQuit',
             empty__pb2.Empty.SerializeToString,
-            av__server__pb2.AvServerMessages.ShouldQuitResponse.FromString,
+            sim__server__pb2.SimServerMessages.ShouldQuitResponse.FromString,
             options,
             channel_credentials,
             insecure,

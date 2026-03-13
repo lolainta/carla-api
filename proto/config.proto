@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package sbsvf_api;
+package pisa_api;
 
 import "google/protobuf/struct.proto";
 
