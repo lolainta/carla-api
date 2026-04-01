@@ -32,9 +32,10 @@ service SimServer {
 
 message SimServerMessages {
   message InitRequest {
-    Config config     = 1;
-    Path   output_dir = 2;
-    double dt         = 3;
+    Config   config     = 1;
+    Path     output_dir = 2;
+    double   dt         = 3;
+    Scenario scenario   = 4;
   }
 
   message InitResponse {

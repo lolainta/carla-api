@@ -13,6 +13,12 @@ message ScenarioPack {
   int64             timeout_ns       = 6;
 }
 
+message Scenario {
+  string type = 1;
+  string name = 2;
+  Path   path = 3;
+}
+
 message EgoConfig {
   double      target_speed = 1;
   SpawnConfig spawn_config = 2;

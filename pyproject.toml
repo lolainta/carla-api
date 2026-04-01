@@ -1,6 +1,6 @@
 [project]
 name = "pisa-api"
-version = "0.1.18"
+version = "0.1.19"
 description = "gRPC (SIM/AV) API contract for SBSVF"
 readme = "README.md"
 requires-python = ">=3.8"
