@@ -34,7 +34,7 @@ message AvServerMessages {
   message InitRequest {
     Config       config        = 1;
     Path         output_dir    = 2;
-    ScenarioPack scenario_pack = 3;
+    string       map_name      = 3;
     double       dt            = 4;
   }
 
