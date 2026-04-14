@@ -14,9 +14,9 @@ message ScenarioPack {
 }
 
 message Scenario {
-  string type = 1;
-  string name = 2;
-  Path   path = 3;
+  string format = 1;
+  string name   = 2;
+  Path   path   = 3;
 }
 
 message EgoConfig {

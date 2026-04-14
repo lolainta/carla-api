@@ -26,7 +26,7 @@ from . import position_pb2 as position__pb2
 from . import path_pb2 as path__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0escenario.proto\x12\x08pisa_api\x1a\x0eposition.proto\x1a\npath.proto\"\xa4\x02\n\x0cScenarioPack\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08map_name\x18\x02 \x01(\t\x12\x38\n\tscenarios\x18\x03 \x03(\x0b\x32%.pisa_api.ScenarioPack.ScenariosEntry\x12-\n\x10param_range_file\x18\x04 \x01(\x0b\x32\x0e.pisa_api.PathH\x00\x88\x01\x01\x12 \n\x03\x65go\x18\x05 \x01(\x0b\x32\x13.pisa_api.EgoConfig\x12\x12\n\ntimeout_ns\x18\x06 \x01(\x03\x1a@\n\x0eScenariosEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.pisa_api.Path:\x02\x38\x01\x42\x13\n\x11_param_range_file\"D\n\x08Scenario\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\x04path\x18\x03 \x01(\x0b\x32\x0e.pisa_api.Path\"y\n\tEgoConfig\x12\x14\n\x0ctarget_speed\x18\x01 \x01(\x01\x12+\n\x0cspawn_config\x18\x02 \x01(\x0b\x32\x15.pisa_api.SpawnConfig\x12)\n\x0bgoal_config\x18\x03 \x01(\x0b\x32\x14.pisa_api.GoalConfig\"B\n\x0bSpawnConfig\x12$\n\x08position\x18\x01 \x01(\x0b\x32\x12.pisa_api.Position\x12\r\n\x05speed\x18\x02 \x01(\x01\"2\n\nGoalConfig\x12$\n\x08position\x18\x01 \x01(\x0b\x32\x12.pisa_api.Positionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0escenario.proto\x12\x08pisa_api\x1a\x0eposition.proto\x1a\npath.proto\"\xa4\x02\n\x0cScenarioPack\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08map_name\x18\x02 \x01(\t\x12\x38\n\tscenarios\x18\x03 \x03(\x0b\x32%.pisa_api.ScenarioPack.ScenariosEntry\x12-\n\x10param_range_file\x18\x04 \x01(\x0b\x32\x0e.pisa_api.PathH\x00\x88\x01\x01\x12 \n\x03\x65go\x18\x05 \x01(\x0b\x32\x13.pisa_api.EgoConfig\x12\x12\n\ntimeout_ns\x18\x06 \x01(\x03\x1a@\n\x0eScenariosEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.pisa_api.Path:\x02\x38\x01\x42\x13\n\x11_param_range_file\"F\n\x08Scenario\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\x04path\x18\x03 \x01(\x0b\x32\x0e.pisa_api.Path\"y\n\tEgoConfig\x12\x14\n\x0ctarget_speed\x18\x01 \x01(\x01\x12+\n\x0cspawn_config\x18\x02 \x01(\x0b\x32\x15.pisa_api.SpawnConfig\x12)\n\x0bgoal_config\x18\x03 \x01(\x0b\x32\x14.pisa_api.GoalConfig\"B\n\x0bSpawnConfig\x12$\n\x08position\x18\x01 \x01(\x0b\x32\x12.pisa_api.Position\x12\r\n\x05speed\x18\x02 \x01(\x01\"2\n\nGoalConfig\x12$\n\x08position\x18\x01 \x01(\x0b\x32\x12.pisa_api.Positionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,11 +40,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_start=264
   _globals['_SCENARIOPACK_SCENARIOSENTRY']._serialized_end=328
   _globals['_SCENARIO']._serialized_start=351
-  _globals['_SCENARIO']._serialized_end=419
-  _globals['_EGOCONFIG']._serialized_start=421
-  _globals['_EGOCONFIG']._serialized_end=542
-  _globals['_SPAWNCONFIG']._serialized_start=544
-  _globals['_SPAWNCONFIG']._serialized_end=610
-  _globals['_GOALCONFIG']._serialized_start=612
-  _globals['_GOALCONFIG']._serialized_end=662
+  _globals['_SCENARIO']._serialized_end=421
+  _globals['_EGOCONFIG']._serialized_start=423
+  _globals['_EGOCONFIG']._serialized_end=544
+  _globals['_SPAWNCONFIG']._serialized_start=546
+  _globals['_SPAWNCONFIG']._serialized_end=612
+  _globals['_GOALCONFIG']._serialized_start=614
+  _globals['_GOALCONFIG']._serialized_end=664
 # @@protoc_insertion_point(module_scope)
