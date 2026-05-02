@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pisa-api"
-version = "0.1.20"
+version = "0.2.0"
 description = "gRPC (SIM/AV) API contract for SBSVF"
 readme = "README.md"
 requires-python = ">=3.8"
