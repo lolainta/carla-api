@@ -11,7 +11,7 @@ message RuntimeFrame {
 
   repeated ObjectState objects = 2;
 
-  optional CollisionInfo collision = 3;
+  repeated CollisionInfo collision = 3;
 
   google.protobuf.Struct extras = 4;
 }

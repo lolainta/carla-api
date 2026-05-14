@@ -27,7 +27,7 @@ from . import collision_pb2 as collision__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13runtime_frame.proto\x12\x08pisa_api\x1a\x0cobject.proto\x1a\x0f\x63ollision.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xb3\x01\n\x0cRuntimeFrame\x12\x13\n\x0bsim_time_ns\x18\x01 \x01(\x03\x12&\n\x07objects\x18\x02 \x03(\x0b\x32\x15.pisa_api.ObjectState\x12/\n\tcollision\x18\x03 \x01(\x0b\x32\x17.pisa_api.CollisionInfoH\x00\x88\x01\x01\x12\'\n\x06\x65xtras\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0c\n\n_collisionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13runtime_frame.proto\x12\x08pisa_api\x1a\x0cobject.proto\x1a\x0f\x63ollision.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xa0\x01\n\x0cRuntimeFrame\x12\x13\n\x0bsim_time_ns\x18\x01 \x01(\x03\x12&\n\x07objects\x18\x02 \x03(\x0b\x32\x15.pisa_api.ObjectState\x12*\n\tcollision\x18\x03 \x03(\x0b\x32\x17.pisa_api.CollisionInfo\x12\'\n\x06\x65xtras\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Structb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,5 +35,5 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'runtime_frame_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_RUNTIMEFRAME']._serialized_start=95
-  _globals['_RUNTIMEFRAME']._serialized_end=274
+  _globals['_RUNTIMEFRAME']._serialized_end=255
 # @@protoc_insertion_point(module_scope)
