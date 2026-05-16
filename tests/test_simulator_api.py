@@ -73,6 +73,12 @@ class FakeSimulator:
         return False
 
 
+def make_init_request(scenario_format: str) -> sim_server_pb2.SimServerMessages.InitRequest:
+    request = sim_server_pb2.SimServerMessages.InitRequest()
+    request.scenario.format = scenario_format
+    return request
+
+
 def test_init_and_step_requests_round_trip_between_dataclasses_and_protobuf() -> None:
     init_data = InitRequest(
         config={"use_viewer": False, "backend": "fake"},
@@ -185,6 +191,75 @@ def test_generic_service_maps_lifecycle_requests_to_dataclass_simulator() -> Non
     assert simulator.step_request.timestamp_ns == 123
 
 
+def test_generic_service_accepts_legacy_scenario_format_parameter() -> None:
+    simulator = FakeSimulator()
+    service = GenericSimulatorService(
+        simulator,
+        name="Fake",
+        scenario_format="open_scenario1",
+    )
+
+    response = service.Init(make_init_request("open_scenario1"), FakeContext())
+
+    assert response.success
+    assert simulator.init_request.scenario.format == "open_scenario1"
+
+
+def test_generic_service_accepts_multiple_scenario_formats() -> None:
+    simulator = FakeSimulator()
+    service = GenericSimulatorService(
+        simulator,
+        name="Fake",
+        scenario_formats={"open_scenario1", "open_scenario2"},
+    )
+
+    response = service.Init(make_init_request("open_scenario2"), FakeContext())
+
+    assert response.success
+    assert simulator.init_request.scenario.format == "open_scenario2"
+
+
+def test_generic_service_rejects_unsupported_scenario_format_with_supported_list() -> None:
+    simulator = FakeSimulator()
+    service = GenericSimulatorService(
+        simulator,
+        name="Fake",
+        scenario_formats={"open_scenario2", "open_scenario1"},
+    )
+
+    response = service.Init(make_init_request("foo"), FakeContext())
+
+    assert not response.success
+    assert "Unsupported scenario format: foo" in response.msg
+    assert "Supported formats: open_scenario1, open_scenario2" in response.msg
+    assert simulator.init_request is None
+
+
+def test_generic_service_rejects_ambiguous_scenario_format_arguments() -> None:
+    try:
+        GenericSimulatorService(
+            FakeSimulator(),
+            name="Fake",
+            scenario_format="open_scenario1",
+            scenario_formats={"open_scenario2"},
+        )
+    except ValueError as exc:
+        assert "scenario_format" in str(exc)
+        assert "scenario_formats" in str(exc)
+    else:
+        raise AssertionError("Expected ValueError")
+
+
+def test_generic_service_skips_format_validation_when_no_formats_are_configured() -> None:
+    simulator = FakeSimulator()
+    service = GenericSimulatorService(simulator, name="Fake")
+
+    response = service.Init(make_init_request("custom_format"), FakeContext())
+
+    assert response.success
+    assert simulator.init_request.scenario.format == "custom_format"
+
+
 def test_generic_service_rejects_step_before_reset() -> None:
     simulator = FakeSimulator()
     service = GenericSimulatorService(simulator, name="Fake")
@@ -213,9 +288,18 @@ def test_serve_simulator_wraps_existing_serve_sim(monkeypatch) -> None:
 
     monkeypatch.setattr(service_module, "serve_sim", fake_serve_sim)
 
-    service_module.serve_simulator(FakeSimulator(), name="Fake", port=1234, max_workers=2)
+    service_module.serve_simulator(
+        FakeSimulator(),
+        name="Fake",
+        scenario_formats={"open_scenario1", "open_scenario2"},
+        port=1234,
+        max_workers=2,
+    )
 
     assert isinstance(calls["servicer"], GenericSimulatorService)
+    assert calls["servicer"]._scenario_formats == frozenset(
+        {"open_scenario1", "open_scenario2"}
+    )
     assert calls["port"] == 1234
     assert calls["max_workers"] == 2
     assert calls["name"] == "Fake"

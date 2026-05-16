@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import threading
+from collections.abc import Collection
 from typing import Any, Protocol
 
 import grpc
@@ -71,10 +72,14 @@ class GenericSimulatorService(BaseSimServer):
         *,
         name: str,
         scenario_format: str | None = None,
+        scenario_formats: Collection[str] | None = None,
     ) -> None:
         self._name = name
         self._simulator = simulator
-        self._scenario_format = scenario_format
+        self._scenario_formats = _normalize_scenario_formats(
+            scenario_format=scenario_format,
+            scenario_formats=scenario_formats,
+        )
         self._lock = threading.RLock()
         self._initialized = False
         self._reset_done = False
@@ -84,10 +89,14 @@ class GenericSimulatorService(BaseSimServer):
         with self._lock:
             init_request = init_request_from_proto(request)
             if (
-                self._scenario_format is not None
-                and init_request.scenario.format != self._scenario_format
+                self._scenario_formats is not None
+                and init_request.scenario.format not in self._scenario_formats
             ):
-                msg = f"Unsupported scenario format: {init_request.scenario.format}"
+                supported_formats = ", ".join(sorted(self._scenario_formats))
+                msg = (
+                    f"Unsupported scenario format: {init_request.scenario.format}. "
+                    f"Supported formats: {supported_formats}"
+                )
                 logger.error(msg)
                 return sim_server_pb2.SimServerMessages.InitResponse(success=False, msg=msg)
 
@@ -252,6 +261,7 @@ def serve_simulator(
     *,
     name: str,
     scenario_format: str | None = None,
+    scenario_formats: Collection[str] | None = None,
     port: Any | None = None,
     max_workers: int = 10,
 ) -> None:
@@ -259,6 +269,7 @@ def serve_simulator(
         simulator,
         name=name,
         scenario_format=scenario_format,
+        scenario_formats=scenario_formats,
     )
     serve_sim(service, name=name, port=port, max_workers=max_workers)
 
@@ -268,6 +279,20 @@ def _peer(context: Any) -> str:
         return context.peer()
     except Exception:
         return "unknown"
+
+
+def _normalize_scenario_formats(
+    *,
+    scenario_format: str | None,
+    scenario_formats: Collection[str] | None,
+) -> frozenset[str] | None:
+    if scenario_format is not None and scenario_formats is not None:
+        raise ValueError("Pass either scenario_format or scenario_formats, not both.")
+    if scenario_formats is not None:
+        return frozenset(scenario_formats)
+    if scenario_format is not None:
+        return frozenset({scenario_format})
+    return None
 
 
 __all__ = [
